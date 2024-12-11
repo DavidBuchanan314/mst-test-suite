@@ -1,0 +1,37 @@
+{
+	"$type": "mst-diff",
+	"description": "procedurally generated MST diff test case between MST 97 and 116",
+	"inputs": {
+		"mst_a": "./cars/exhaustive/exhaustive_097.car",
+		"mst_b": "./cars/exhaustive/exhaustive_116.car"
+	},
+	"results": {
+		"created_nodes": [
+			"bafyreie7xo25cdxecehxa535tfdftyhcgsffvkcqlpfvduigktkzl4n4uu",
+			"bafyreifntoqijmybwn273vczczdtu2am6dtyxjp45e2ku2pm76kuvnm5hm"
+		],
+		"deleted_nodes": [
+			"bafyreieiasyslyxsoow7begvmx2unp7euemsllcrshfgtg52yyiappc6au",
+			"bafyreifo3t352zwrhezotm7ng467zz4fplmk5sgteqgbimgsetrxl5zaty"
+		],
+		"record_ops": [
+			{
+				"rpath": "k00",
+				"old_value": "bafyreicrga7zulrgr6wyvsxsupks4qlpdm273vy33kc46uqpw7hiv47rzq",
+				"new_value": null
+			},
+			{
+				"rpath": "k12",
+				"old_value": null,
+				"new_value": "bafyreiavgny7i4rpmrbxufoy27phkfhilk4j7woublohyfdzirdnhc4l7u"
+			},
+			{
+				"rpath": "k32",
+				"old_value": null,
+				"new_value": "bafyreigwdb2xznqpwjc34ez27qurchteewochdoueuq3hdwknk3gcwb77e"
+			}
+		],
+		"proof_nodes": "TODO",
+		"firehose_cids": "TODO"
+	}
+}

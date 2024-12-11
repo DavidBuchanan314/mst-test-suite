@@ -1,0 +1,44 @@
+{
+	"$type": "mst-diff",
+	"description": "procedurally generated MST diff test case between MST 96 and 126",
+	"inputs": {
+		"mst_a": "./cars/exhaustive/exhaustive_096.car",
+		"mst_b": "./cars/exhaustive/exhaustive_126.car"
+	},
+	"results": {
+		"created_nodes": [
+			"bafyreib57hae3otzffa54pvpj5pwuf66k5ut5daypjjqoi3fgsct2l3yia",
+			"bafyreiclxcpzedima6e7xu2qnju6qqggei3qzhcyr3c3b4oautc2fjns7y",
+			"bafyreidl74hgisd5zoew5pa3qhmfw5rc24athr7vspas26f5vzecwwmvtm",
+			"bafyreifkumiuhdwc2ttxtujzpcmuzb3kongnoasglx5zqbbqlupmfif7u4",
+			"bafyreihbizgzuwttp2iwilsihjaeyxf3jo2c55iafbovcwfods5xsbjsdi"
+		],
+		"deleted_nodes": [
+			"bafyreidawhgc3akjwsetoil52stbdb4bwluwep6uargc5pczpmdj64pi7i"
+		],
+		"record_ops": [
+			{
+				"rpath": "k11",
+				"old_value": null,
+				"new_value": "bafyreiaifjnt72ikz6u6jpopx4zfe3qherxd2bitvecyy7c5x252bqp4va"
+			},
+			{
+				"rpath": "k12",
+				"old_value": null,
+				"new_value": "bafyreiavgny7i4rpmrbxufoy27phkfhilk4j7woublohyfdzirdnhc4l7u"
+			},
+			{
+				"rpath": "k30",
+				"old_value": null,
+				"new_value": "bafyreigcx356u25dwrk7z7dn3iwnsfquvakxt5s3y43ylj3f3sfwmahck4"
+			},
+			{
+				"rpath": "k32",
+				"old_value": null,
+				"new_value": "bafyreigwdb2xznqpwjc34ez27qurchteewochdoueuq3hdwknk3gcwb77e"
+			}
+		],
+		"proof_nodes": "TODO",
+		"firehose_cids": "TODO"
+	}
+}

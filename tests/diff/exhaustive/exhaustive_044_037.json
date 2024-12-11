@@ -1,0 +1,34 @@
+{
+	"$type": "mst-diff",
+	"description": "procedurally generated MST diff test case between MST 44 and 37",
+	"inputs": {
+		"mst_a": "./cars/exhaustive/exhaustive_044.car",
+		"mst_b": "./cars/exhaustive/exhaustive_037.car"
+	},
+	"results": {
+		"created_nodes": [
+			"bafyreicuo44v7olcn2yvwdyelkvakssmjkzscvackoepahy6bfuyk3ytsq",
+			"bafyreidq3czzom2n5vigfe2j2zrn3qzzgnb3wum2e3gzlauujir4nnx72a"
+		],
+		"deleted_nodes": [
+			"bafyreibnl5yvoahrk7tktisrf737dsw4xzs4rindeu4dco4znslmhdtjbm",
+			"bafyreicdamwfuvzgl6a6ibcohsuuyo2scomwmnhrqk2p6dmxcfuh5dt6oi",
+			"bafyreiffjnglpbdmrjncpnh3lijwbatsgazzvuqsvk7ikmmqdsdmifr6i4",
+			"bafyreihbizgzuwttp2iwilsihjaeyxf3jo2c55iafbovcwfods5xsbjsdi"
+		],
+		"record_ops": [
+			{
+				"rpath": "k00",
+				"old_value": null,
+				"new_value": "bafyreicrga7zulrgr6wyvsxsupks4qlpdm273vy33kc46uqpw7hiv47rzq"
+			},
+			{
+				"rpath": "k30",
+				"old_value": "bafyreigcx356u25dwrk7z7dn3iwnsfquvakxt5s3y43ylj3f3sfwmahck4",
+				"new_value": null
+			}
+		],
+		"proof_nodes": "TODO",
+		"firehose_cids": "TODO"
+	}
+}

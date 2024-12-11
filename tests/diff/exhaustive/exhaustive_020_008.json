@@ -1,0 +1,35 @@
+{
+	"$type": "mst-diff",
+	"description": "procedurally generated MST diff test case between MST 20 and 8",
+	"inputs": {
+		"mst_a": "./cars/exhaustive/exhaustive_020.car",
+		"mst_b": "./cars/exhaustive/exhaustive_008.car"
+	},
+	"results": {
+		"created_nodes": [
+			"bafyreiee7ztrlxxsdilyaecnpqsgv7mjcietna2wsgaztxnp5zdh45vnce"
+		],
+		"deleted_nodes": [
+			"bafyreie7xo25cdxecehxa535tfdftyhcgsffvkcqlpfvduigktkzl4n4uu"
+		],
+		"record_ops": [
+			{
+				"rpath": "k12",
+				"old_value": "bafyreiavgny7i4rpmrbxufoy27phkfhilk4j7woublohyfdzirdnhc4l7u",
+				"new_value": null
+			},
+			{
+				"rpath": "k30",
+				"old_value": null,
+				"new_value": "bafyreigcx356u25dwrk7z7dn3iwnsfquvakxt5s3y43ylj3f3sfwmahck4"
+			},
+			{
+				"rpath": "k32",
+				"old_value": "bafyreigwdb2xznqpwjc34ez27qurchteewochdoueuq3hdwknk3gcwb77e",
+				"new_value": null
+			}
+		],
+		"proof_nodes": "TODO",
+		"firehose_cids": "TODO"
+	}
+}

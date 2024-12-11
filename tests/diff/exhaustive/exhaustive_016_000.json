@@ -1,0 +1,25 @@
+{
+	"$type": "mst-diff",
+	"description": "procedurally generated MST diff test case between MST 16 and 0",
+	"inputs": {
+		"mst_a": "./cars/exhaustive/exhaustive_016.car",
+		"mst_b": "./cars/exhaustive/exhaustive_000.car"
+	},
+	"results": {
+		"created_nodes": [
+			"bafyreie5737gdxlw5i64vzichcalba3z2v5n6icifvx5xytvske7mr3hpm"
+		],
+		"deleted_nodes": [
+			"bafyreidl74hgisd5zoew5pa3qhmfw5rc24athr7vspas26f5vzecwwmvtm"
+		],
+		"record_ops": [
+			{
+				"rpath": "k32",
+				"old_value": "bafyreigwdb2xznqpwjc34ez27qurchteewochdoueuq3hdwknk3gcwb77e",
+				"new_value": null
+			}
+		],
+		"proof_nodes": "TODO",
+		"firehose_cids": "TODO"
+	}
+}

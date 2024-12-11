@@ -1,0 +1,33 @@
+{
+	"$type": "mst-diff",
+	"description": "procedurally generated MST diff test case between MST 91 and 82",
+	"inputs": {
+		"mst_a": "./cars/exhaustive/exhaustive_091.car",
+		"mst_b": "./cars/exhaustive/exhaustive_082.car"
+	},
+	"results": {
+		"created_nodes": [
+			"bafyreib2ojyxa3o724vyqjmozxwcpxjol2ic4473cnwdcbnvu4x3ppnfne"
+		],
+		"deleted_nodes": [
+			"bafyreidktcktxbf6jbbwuc7qpxh3dydhxt5v4ld3q2cbr2rdydox27mpo4",
+			"bafyreieiasyslyxsoow7begvmx2unp7euemsllcrshfgtg52yyiappc6au",
+			"bafyreihvs3tjbhvzctmg6j2ubfyakn4d6b23euaxqdnntqtj5wexazmlta",
+			"bafyreihykvdp6sa2kdymtzyhnyrgp3djrhy5qne5bjxj56nvpwkchcjpoq"
+		],
+		"record_ops": [
+			{
+				"rpath": "k00",
+				"old_value": "bafyreicrga7zulrgr6wyvsxsupks4qlpdm273vy33kc46uqpw7hiv47rzq",
+				"new_value": null
+			},
+			{
+				"rpath": "k30",
+				"old_value": "bafyreigcx356u25dwrk7z7dn3iwnsfquvakxt5s3y43ylj3f3sfwmahck4",
+				"new_value": null
+			}
+		],
+		"proof_nodes": "TODO",
+		"firehose_cids": "TODO"
+	}
+}

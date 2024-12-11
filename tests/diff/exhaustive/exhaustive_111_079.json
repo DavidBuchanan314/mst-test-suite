@@ -1,0 +1,27 @@
+{
+	"$type": "mst-diff",
+	"description": "procedurally generated MST diff test case between MST 111 and 79",
+	"inputs": {
+		"mst_a": "./cars/exhaustive/exhaustive_111.car",
+		"mst_b": "./cars/exhaustive/exhaustive_079.car"
+	},
+	"results": {
+		"created_nodes": [
+			"bafyreibasgflb3mpqfa7rp4mvp6lp5dguy43ut4bhnjt6ypw3a5kxxqmm4",
+			"bafyreidxn4zlmqj3utjinzzms4i53b4636rsbo7e6yviugzmzmxrgbs5cq"
+		],
+		"deleted_nodes": [
+			"bafyreidawhgc3akjwsetoil52stbdb4bwluwep6uargc5pczpmdj64pi7i",
+			"bafyreignpn3rdsxudzdjh353rnrdyelmr3tsps7wpobjxi6whzbz4obgja"
+		],
+		"record_ops": [
+			{
+				"rpath": "k34",
+				"old_value": "bafyreifm6isbphnizkyp5tdpn6q6t2jutlw74s374kihsopf5uxvzx6hdy",
+				"new_value": null
+			}
+		],
+		"proof_nodes": "TODO",
+		"firehose_cids": "TODO"
+	}
+}

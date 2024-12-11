@@ -1,0 +1,25 @@
+{
+	"$type": "mst-diff",
+	"description": "procedurally generated MST diff test case between MST 5 and 4",
+	"inputs": {
+		"mst_a": "./cars/exhaustive/exhaustive_005.car",
+		"mst_b": "./cars/exhaustive/exhaustive_004.car"
+	},
+	"results": {
+		"created_nodes": [
+			"bafyreihbizgzuwttp2iwilsihjaeyxf3jo2c55iafbovcwfods5xsbjsdi"
+		],
+		"deleted_nodes": [
+			"bafyreicuo44v7olcn2yvwdyelkvakssmjkzscvackoepahy6bfuyk3ytsq"
+		],
+		"record_ops": [
+			{
+				"rpath": "k00",
+				"old_value": "bafyreicrga7zulrgr6wyvsxsupks4qlpdm273vy33kc46uqpw7hiv47rzq",
+				"new_value": null
+			}
+		],
+		"proof_nodes": "TODO",
+		"firehose_cids": "TODO"
+	}
+}

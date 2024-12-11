@@ -1,0 +1,36 @@
+{
+	"$type": "mst-diff",
+	"description": "procedurally generated MST diff test case between MST 118 and 66",
+	"inputs": {
+		"mst_a": "./cars/exhaustive/exhaustive_118.car",
+		"mst_b": "./cars/exhaustive/exhaustive_066.car"
+	},
+	"results": {
+		"created_nodes": [
+			"bafyreidqj66cbpjo6p4asd4kwpftu4reogbb4btxzrwv4xmrdl5mzkdhyi"
+		],
+		"deleted_nodes": [
+			"bafyreiaiohevvvx65ipwzd57pud7xp3wdn2jpgqhkrh7klixpclkpnhyzy",
+			"bafyreie7xo25cdxecehxa535tfdftyhcgsffvkcqlpfvduigktkzl4n4uu"
+		],
+		"record_ops": [
+			{
+				"rpath": "k12",
+				"old_value": "bafyreiavgny7i4rpmrbxufoy27phkfhilk4j7woublohyfdzirdnhc4l7u",
+				"new_value": null
+			},
+			{
+				"rpath": "k32",
+				"old_value": "bafyreigwdb2xznqpwjc34ez27qurchteewochdoueuq3hdwknk3gcwb77e",
+				"new_value": null
+			},
+			{
+				"rpath": "k34",
+				"old_value": "bafyreifm6isbphnizkyp5tdpn6q6t2jutlw74s374kihsopf5uxvzx6hdy",
+				"new_value": null
+			}
+		],
+		"proof_nodes": "TODO",
+		"firehose_cids": "TODO"
+	}
+}

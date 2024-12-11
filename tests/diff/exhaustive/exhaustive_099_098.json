@@ -1,0 +1,26 @@
+{
+	"$type": "mst-diff",
+	"description": "procedurally generated MST diff test case between MST 99 and 98",
+	"inputs": {
+		"mst_a": "./cars/exhaustive/exhaustive_099.car",
+		"mst_b": "./cars/exhaustive/exhaustive_098.car"
+	},
+	"results": {
+		"created_nodes": [
+			"bafyreieccfmummxoojlcckrp4gkflpetxs7xkqdhnam2jp6b7v3pdwwpem"
+		],
+		"deleted_nodes": [
+			"bafyreieiasyslyxsoow7begvmx2unp7euemsllcrshfgtg52yyiappc6au",
+			"bafyreifwcbyf5y43pknfeoiwiifclx2olqmtg2vry3w2gks465g2avwm3y"
+		],
+		"record_ops": [
+			{
+				"rpath": "k00",
+				"old_value": "bafyreicrga7zulrgr6wyvsxsupks4qlpdm273vy33kc46uqpw7hiv47rzq",
+				"new_value": null
+			}
+		],
+		"proof_nodes": "TODO",
+		"firehose_cids": "TODO"
+	}
+}

@@ -1,0 +1,31 @@
+{
+	"$type": "mst-diff",
+	"description": "procedurally generated MST diff test case between MST 18 and 114",
+	"inputs": {
+		"mst_a": "./cars/exhaustive/exhaustive_018.car",
+		"mst_b": "./cars/exhaustive/exhaustive_114.car"
+	},
+	"results": {
+		"created_nodes": [
+			"bafyreiati6ne4za3m6b6lqzg7owbzcju4j55brbwelrdazttad7vji3crq",
+			"bafyreieffclauuomfthxoofgltygxg5y4ms3ly5efh3cczf6w5jdvxt3pe"
+		],
+		"deleted_nodes": [
+			"bafyreiatlqe7vmkfkpjcyvfcbc52ejp7gt53yugts57fyv5s7z7quynj7u"
+		],
+		"record_ops": [
+			{
+				"rpath": "k34",
+				"old_value": null,
+				"new_value": "bafyreifm6isbphnizkyp5tdpn6q6t2jutlw74s374kihsopf5uxvzx6hdy"
+			},
+			{
+				"rpath": "k35",
+				"old_value": null,
+				"new_value": "bafyreibp5l5uwo5hfjill6str6roxvad7s6rgns3ucx7woykyhb3wkgxi4"
+			}
+		],
+		"proof_nodes": "TODO",
+		"firehose_cids": "TODO"
+	}
+}

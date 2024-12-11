@@ -1,0 +1,33 @@
+{
+	"$type": "mst-diff",
+	"description": "procedurally generated MST diff test case between MST 105 and 33",
+	"inputs": {
+		"mst_a": "./cars/exhaustive/exhaustive_105.car",
+		"mst_b": "./cars/exhaustive/exhaustive_033.car"
+	},
+	"results": {
+		"created_nodes": [
+			"bafyreihdrmmftvpnmqulthjlooyqpbhhbbzfsj7vtdzsfbqw27n676hooa"
+		],
+		"deleted_nodes": [
+			"bafyreidawhgc3akjwsetoil52stbdb4bwluwep6uargc5pczpmdj64pi7i",
+			"bafyreieffclauuomfthxoofgltygxg5y4ms3ly5efh3cczf6w5jdvxt3pe",
+			"bafyreih47hnptmsi6i6hj5k2z4w4w5xybrvah3ynzsxx4axauhn6p7e3nm",
+			"bafyreihh2kx26fxe3wkyjnsr5y23mwujnjmxvhf65ajlwuermhjldvojpi"
+		],
+		"record_ops": [
+			{
+				"rpath": "k30",
+				"old_value": "bafyreigcx356u25dwrk7z7dn3iwnsfquvakxt5s3y43ylj3f3sfwmahck4",
+				"new_value": null
+			},
+			{
+				"rpath": "k35",
+				"old_value": "bafyreibp5l5uwo5hfjill6str6roxvad7s6rgns3ucx7woykyhb3wkgxi4",
+				"new_value": null
+			}
+		],
+		"proof_nodes": "TODO",
+		"firehose_cids": "TODO"
+	}
+}

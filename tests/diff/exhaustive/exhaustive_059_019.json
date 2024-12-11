@@ -1,0 +1,32 @@
+{
+	"$type": "mst-diff",
+	"description": "procedurally generated MST diff test case between MST 59 and 19",
+	"inputs": {
+		"mst_a": "./cars/exhaustive/exhaustive_059.car",
+		"mst_b": "./cars/exhaustive/exhaustive_019.car"
+	},
+	"results": {
+		"created_nodes": [
+			"bafyreicoiqgvllhikewibc6oavywbxu5htos4etor45urvti5tk3r5kcga"
+		],
+		"deleted_nodes": [
+			"bafyreiawdhfihw23oo2l55mev5s42ljtwwm4ic7c26khyhr3x65wr37z3a",
+			"bafyreibw3juoivrje2ogjc3twcp2yiefrfres3isgs7l36cujgnyu3akoi",
+			"bafyreihykvdp6sa2kdymtzyhnyrgp3djrhy5qne5bjxj56nvpwkchcjpoq"
+		],
+		"record_ops": [
+			{
+				"rpath": "k30",
+				"old_value": "bafyreigcx356u25dwrk7z7dn3iwnsfquvakxt5s3y43ylj3f3sfwmahck4",
+				"new_value": null
+			},
+			{
+				"rpath": "k34",
+				"old_value": "bafyreifm6isbphnizkyp5tdpn6q6t2jutlw74s374kihsopf5uxvzx6hdy",
+				"new_value": null
+			}
+		],
+		"proof_nodes": "TODO",
+		"firehose_cids": "TODO"
+	}
+}

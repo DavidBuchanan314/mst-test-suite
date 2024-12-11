@@ -1,0 +1,27 @@
+{
+	"$type": "mst-diff",
+	"description": "procedurally generated MST diff test case between MST 91 and 89",
+	"inputs": {
+		"mst_a": "./cars/exhaustive/exhaustive_091.car",
+		"mst_b": "./cars/exhaustive/exhaustive_089.car"
+	},
+	"results": {
+		"created_nodes": [
+			"bafyreicvpeozxei2abb3ckgqqjbbp5gnw3i22fmmcpldv3wjn3yuzkjk2y",
+			"bafyreihh2kx26fxe3wkyjnsr5y23mwujnjmxvhf65ajlwuermhjldvojpi"
+		],
+		"deleted_nodes": [
+			"bafyreidktcktxbf6jbbwuc7qpxh3dydhxt5v4ld3q2cbr2rdydox27mpo4",
+			"bafyreihykvdp6sa2kdymtzyhnyrgp3djrhy5qne5bjxj56nvpwkchcjpoq"
+		],
+		"record_ops": [
+			{
+				"rpath": "k11",
+				"old_value": "bafyreiaifjnt72ikz6u6jpopx4zfe3qherxd2bitvecyy7c5x252bqp4va",
+				"new_value": null
+			}
+		],
+		"proof_nodes": "TODO",
+		"firehose_cids": "TODO"
+	}
+}

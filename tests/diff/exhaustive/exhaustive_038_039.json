@@ -1,0 +1,26 @@
+{
+	"$type": "mst-diff",
+	"description": "procedurally generated MST diff test case between MST 38 and 39",
+	"inputs": {
+		"mst_a": "./cars/exhaustive/exhaustive_038.car",
+		"mst_b": "./cars/exhaustive/exhaustive_039.car"
+	},
+	"results": {
+		"created_nodes": [
+			"bafyreieiasyslyxsoow7begvmx2unp7euemsllcrshfgtg52yyiappc6au",
+			"bafyreigfknv4d3t5xm4wih27znujzyinesp2qnxtom7mwg5orqinofk3dq"
+		],
+		"deleted_nodes": [
+			"bafyreidcq3m4whrrgizczyff3eggmesn3odkvrejo2djmnirdkhlownt5i"
+		],
+		"record_ops": [
+			{
+				"rpath": "k00",
+				"old_value": null,
+				"new_value": "bafyreicrga7zulrgr6wyvsxsupks4qlpdm273vy33kc46uqpw7hiv47rzq"
+			}
+		],
+		"proof_nodes": "TODO",
+		"firehose_cids": "TODO"
+	}
+}

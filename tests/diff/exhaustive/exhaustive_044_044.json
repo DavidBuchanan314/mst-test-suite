@@ -1,0 +1,15 @@
+{
+	"$type": "mst-diff",
+	"description": "procedurally generated MST diff test case between MST 44 and 44",
+	"inputs": {
+		"mst_a": "./cars/exhaustive/exhaustive_044.car",
+		"mst_b": "./cars/exhaustive/exhaustive_044.car"
+	},
+	"results": {
+		"created_nodes": [],
+		"deleted_nodes": [],
+		"record_ops": [],
+		"proof_nodes": "TODO",
+		"firehose_cids": "TODO"
+	}
+}

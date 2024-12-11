@@ -1,0 +1,26 @@
+{
+	"$type": "mst-diff",
+	"description": "procedurally generated MST diff test case between MST 22 and 23",
+	"inputs": {
+		"mst_a": "./cars/exhaustive/exhaustive_022.car",
+		"mst_b": "./cars/exhaustive/exhaustive_023.car"
+	},
+	"results": {
+		"created_nodes": [
+			"bafyreieiasyslyxsoow7begvmx2unp7euemsllcrshfgtg52yyiappc6au",
+			"bafyreifepxzmhx6k3yaodd6xnlnad225n5x66fc3cuyj6pvebnrghwkwwu"
+		],
+		"deleted_nodes": [
+			"bafyreib7lb3qlyabyqfh6t7pagmg4mz74l7skmfkuuwmzgeilp6wvksyca"
+		],
+		"record_ops": [
+			{
+				"rpath": "k00",
+				"old_value": null,
+				"new_value": "bafyreicrga7zulrgr6wyvsxsupks4qlpdm273vy33kc46uqpw7hiv47rzq"
+			}
+		],
+		"proof_nodes": "TODO",
+		"firehose_cids": "TODO"
+	}
+}

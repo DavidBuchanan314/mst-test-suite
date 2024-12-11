@@ -1,0 +1,27 @@
+{
+	"$type": "mst-diff",
+	"description": "procedurally generated MST diff test case between MST 102 and 110",
+	"inputs": {
+		"mst_a": "./cars/exhaustive/exhaustive_102.car",
+		"mst_b": "./cars/exhaustive/exhaustive_110.car"
+	},
+	"results": {
+		"created_nodes": [
+			"bafyreiclxcpzedima6e7xu2qnju6qqggei3qzhcyr3c3b4oautc2fjns7y",
+			"bafyreidawhgc3akjwsetoil52stbdb4bwluwep6uargc5pczpmdj64pi7i",
+			"bafyreih6ct5tnewezi75osmkowoke2vvrxqyfm3xmzgjke2m3iamv6ey4q"
+		],
+		"deleted_nodes": [
+			"bafyreifstowcxappajnemh4lmeqftgb6orx2nlojlp3q4live33n256qbi"
+		],
+		"record_ops": [
+			{
+				"rpath": "k30",
+				"old_value": null,
+				"new_value": "bafyreigcx356u25dwrk7z7dn3iwnsfquvakxt5s3y43ylj3f3sfwmahck4"
+			}
+		],
+		"proof_nodes": "TODO",
+		"firehose_cids": "TODO"
+	}
+}

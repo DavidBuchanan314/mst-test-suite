@@ -1,0 +1,28 @@
+{
+	"$type": "mst-diff",
+	"description": "procedurally generated MST diff test case between MST 127 and 111",
+	"inputs": {
+		"mst_a": "./cars/exhaustive/exhaustive_127.car",
+		"mst_b": "./cars/exhaustive/exhaustive_111.car"
+	},
+	"results": {
+		"created_nodes": [
+			"bafyreidawhgc3akjwsetoil52stbdb4bwluwep6uargc5pczpmdj64pi7i",
+			"bafyreignpn3rdsxudzdjh353rnrdyelmr3tsps7wpobjxi6whzbz4obgja"
+		],
+		"deleted_nodes": [
+			"bafyreib57hae3otzffa54pvpj5pwuf66k5ut5daypjjqoi3fgsct2l3yia",
+			"bafyreidl74hgisd5zoew5pa3qhmfw5rc24athr7vspas26f5vzecwwmvtm",
+			"bafyreihr6gkdnp7n3k2utatovvb2ha73rccvac4yrrpe34u5j7wkvbwvvm"
+		],
+		"record_ops": [
+			{
+				"rpath": "k32",
+				"old_value": "bafyreigwdb2xznqpwjc34ez27qurchteewochdoueuq3hdwknk3gcwb77e",
+				"new_value": null
+			}
+		],
+		"proof_nodes": "TODO",
+		"firehose_cids": "TODO"
+	}
+}

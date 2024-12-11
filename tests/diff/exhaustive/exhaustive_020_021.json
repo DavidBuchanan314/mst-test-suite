@@ -1,0 +1,25 @@
+{
+	"$type": "mst-diff",
+	"description": "procedurally generated MST diff test case between MST 20 and 21",
+	"inputs": {
+		"mst_a": "./cars/exhaustive/exhaustive_020.car",
+		"mst_b": "./cars/exhaustive/exhaustive_021.car"
+	},
+	"results": {
+		"created_nodes": [
+			"bafyreiffmo46nydrg7hqrmy43guopec5c7y3nlsbvpjj2jqy7t76mztbba"
+		],
+		"deleted_nodes": [
+			"bafyreie7xo25cdxecehxa535tfdftyhcgsffvkcqlpfvduigktkzl4n4uu"
+		],
+		"record_ops": [
+			{
+				"rpath": "k00",
+				"old_value": null,
+				"new_value": "bafyreicrga7zulrgr6wyvsxsupks4qlpdm273vy33kc46uqpw7hiv47rzq"
+			}
+		],
+		"proof_nodes": "TODO",
+		"firehose_cids": "TODO"
+	}
+}

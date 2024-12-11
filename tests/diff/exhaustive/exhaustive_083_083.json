@@ -1,0 +1,15 @@
+{
+	"$type": "mst-diff",
+	"description": "procedurally generated MST diff test case between MST 83 and 83",
+	"inputs": {
+		"mst_a": "./cars/exhaustive/exhaustive_083.car",
+		"mst_b": "./cars/exhaustive/exhaustive_083.car"
+	},
+	"results": {
+		"created_nodes": [],
+		"deleted_nodes": [],
+		"record_ops": [],
+		"proof_nodes": "TODO",
+		"firehose_cids": "TODO"
+	}
+}

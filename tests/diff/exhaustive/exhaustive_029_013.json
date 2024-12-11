@@ -1,0 +1,27 @@
+{
+	"$type": "mst-diff",
+	"description": "procedurally generated MST diff test case between MST 29 and 13",
+	"inputs": {
+		"mst_a": "./cars/exhaustive/exhaustive_029.car",
+		"mst_b": "./cars/exhaustive/exhaustive_013.car"
+	},
+	"results": {
+		"created_nodes": [
+			"bafyreiahkgsc54sjv4lrymkv45hqmugk4smus4q4jspctibvpzrnee6j7a"
+		],
+		"deleted_nodes": [
+			"bafyreibrvtndpqxte6c3azmb44splnifcpjv2voy46gytyvqvwhuxxrw4y",
+			"bafyreidl74hgisd5zoew5pa3qhmfw5rc24athr7vspas26f5vzecwwmvtm",
+			"bafyreihofsy7dcz2sdok234efel4ydfgepsgfn7ksfjot2mqi4avrschx4"
+		],
+		"record_ops": [
+			{
+				"rpath": "k32",
+				"old_value": "bafyreigwdb2xznqpwjc34ez27qurchteewochdoueuq3hdwknk3gcwb77e",
+				"new_value": null
+			}
+		],
+		"proof_nodes": "TODO",
+		"firehose_cids": "TODO"
+	}
+}

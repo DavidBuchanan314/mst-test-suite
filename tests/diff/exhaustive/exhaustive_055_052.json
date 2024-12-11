@@ -1,0 +1,31 @@
+{
+	"$type": "mst-diff",
+	"description": "procedurally generated MST diff test case between MST 55 and 52",
+	"inputs": {
+		"mst_a": "./cars/exhaustive/exhaustive_055.car",
+		"mst_b": "./cars/exhaustive/exhaustive_052.car"
+	},
+	"results": {
+		"created_nodes": [
+			"bafyreihobaukpa2kn5i2ugcpvbkm5uyipstleb7iflmzkxp7uot5aiunmi"
+		],
+		"deleted_nodes": [
+			"bafyreieiasyslyxsoow7begvmx2unp7euemsllcrshfgtg52yyiappc6au",
+			"bafyreifkkzic4vase2lptyl5mgdqiec7qxjxa5kbgwn47jhhwr5tndenqq"
+		],
+		"record_ops": [
+			{
+				"rpath": "k00",
+				"old_value": "bafyreicrga7zulrgr6wyvsxsupks4qlpdm273vy33kc46uqpw7hiv47rzq",
+				"new_value": null
+			},
+			{
+				"rpath": "k11",
+				"old_value": "bafyreiaifjnt72ikz6u6jpopx4zfe3qherxd2bitvecyy7c5x252bqp4va",
+				"new_value": null
+			}
+		],
+		"proof_nodes": "TODO",
+		"firehose_cids": "TODO"
+	}
+}

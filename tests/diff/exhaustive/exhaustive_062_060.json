@@ -1,0 +1,27 @@
+{
+	"$type": "mst-diff",
+	"description": "procedurally generated MST diff test case between MST 62 and 60",
+	"inputs": {
+		"mst_a": "./cars/exhaustive/exhaustive_062.car",
+		"mst_b": "./cars/exhaustive/exhaustive_060.car"
+	},
+	"results": {
+		"created_nodes": [
+			"bafyreiabiikh2cwoebjlsmvqp3xgnjprwsrqhwyzsoeektcavkour4qvh4",
+			"bafyreicdamwfuvzgl6a6ibcohsuuyo2scomwmnhrqk2p6dmxcfuh5dt6oi"
+		],
+		"deleted_nodes": [
+			"bafyreia2rr34bdqly5u2v6wajouew7qgxolikde7l4cpizojpncq6dm2q4",
+			"bafyreiclxcpzedima6e7xu2qnju6qqggei3qzhcyr3c3b4oautc2fjns7y"
+		],
+		"record_ops": [
+			{
+				"rpath": "k11",
+				"old_value": "bafyreiaifjnt72ikz6u6jpopx4zfe3qherxd2bitvecyy7c5x252bqp4va",
+				"new_value": null
+			}
+		],
+		"proof_nodes": "TODO",
+		"firehose_cids": "TODO"
+	}
+}

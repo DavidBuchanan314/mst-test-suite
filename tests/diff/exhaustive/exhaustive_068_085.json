@@ -1,0 +1,30 @@
+{
+	"$type": "mst-diff",
+	"description": "procedurally generated MST diff test case between MST 68 and 85",
+	"inputs": {
+		"mst_a": "./cars/exhaustive/exhaustive_068.car",
+		"mst_b": "./cars/exhaustive/exhaustive_085.car"
+	},
+	"results": {
+		"created_nodes": [
+			"bafyreiepjxn3nx7j6u3jsuipahkoi6gj2bcg5ekpls3y4z4uzcgsuh32nq"
+		],
+		"deleted_nodes": [
+			"bafyreifmstn6klvozisonhqgcnhsyxsonzfytep4qbfx67ri4lhwx6rbga"
+		],
+		"record_ops": [
+			{
+				"rpath": "k00",
+				"old_value": null,
+				"new_value": "bafyreicrga7zulrgr6wyvsxsupks4qlpdm273vy33kc46uqpw7hiv47rzq"
+			},
+			{
+				"rpath": "k32",
+				"old_value": null,
+				"new_value": "bafyreigwdb2xznqpwjc34ez27qurchteewochdoueuq3hdwknk3gcwb77e"
+			}
+		],
+		"proof_nodes": "TODO",
+		"firehose_cids": "TODO"
+	}
+}

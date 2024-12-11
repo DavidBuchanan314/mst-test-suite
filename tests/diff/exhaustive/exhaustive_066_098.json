@@ -1,0 +1,25 @@
+{
+	"$type": "mst-diff",
+	"description": "procedurally generated MST diff test case between MST 66 and 98",
+	"inputs": {
+		"mst_a": "./cars/exhaustive/exhaustive_066.car",
+		"mst_b": "./cars/exhaustive/exhaustive_098.car"
+	},
+	"results": {
+		"created_nodes": [
+			"bafyreieccfmummxoojlcckrp4gkflpetxs7xkqdhnam2jp6b7v3pdwwpem"
+		],
+		"deleted_nodes": [
+			"bafyreidqj66cbpjo6p4asd4kwpftu4reogbb4btxzrwv4xmrdl5mzkdhyi"
+		],
+		"record_ops": [
+			{
+				"rpath": "k34",
+				"old_value": null,
+				"new_value": "bafyreifm6isbphnizkyp5tdpn6q6t2jutlw74s374kihsopf5uxvzx6hdy"
+			}
+		],
+		"proof_nodes": "TODO",
+		"firehose_cids": "TODO"
+	}
+}

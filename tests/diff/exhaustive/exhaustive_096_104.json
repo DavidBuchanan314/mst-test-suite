@@ -1,0 +1,23 @@
+{
+	"$type": "mst-diff",
+	"description": "procedurally generated MST diff test case between MST 96 and 104",
+	"inputs": {
+		"mst_a": "./cars/exhaustive/exhaustive_096.car",
+		"mst_b": "./cars/exhaustive/exhaustive_104.car"
+	},
+	"results": {
+		"created_nodes": [
+			"bafyreicy4mh7piinzkk4d4iusyrlqgjrcm447mztedjdri5uuhdnxdrh2m"
+		],
+		"deleted_nodes": [],
+		"record_ops": [
+			{
+				"rpath": "k30",
+				"old_value": null,
+				"new_value": "bafyreigcx356u25dwrk7z7dn3iwnsfquvakxt5s3y43ylj3f3sfwmahck4"
+			}
+		],
+		"proof_nodes": "TODO",
+		"firehose_cids": "TODO"
+	}
+}

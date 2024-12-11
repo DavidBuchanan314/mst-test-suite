@@ -1,0 +1,32 @@
+{
+	"$type": "mst-diff",
+	"description": "procedurally generated MST diff test case between MST 46 and 36",
+	"inputs": {
+		"mst_a": "./cars/exhaustive/exhaustive_046.car",
+		"mst_b": "./cars/exhaustive/exhaustive_036.car"
+	},
+	"results": {
+		"created_nodes": [
+			"bafyreidbrrdkazaizhvjrpq3j47tlp43ed3wikig2x7pvm6ftporbvplrm"
+		],
+		"deleted_nodes": [
+			"bafyreibsjd66enryhlsskdr2qhked4dsvwwlqkybbdtfvg5nhvtb5jvu6u",
+			"bafyreiclxcpzedima6e7xu2qnju6qqggei3qzhcyr3c3b4oautc2fjns7y",
+			"bafyreiffjnglpbdmrjncpnh3lijwbatsgazzvuqsvk7ikmmqdsdmifr6i4"
+		],
+		"record_ops": [
+			{
+				"rpath": "k11",
+				"old_value": "bafyreiaifjnt72ikz6u6jpopx4zfe3qherxd2bitvecyy7c5x252bqp4va",
+				"new_value": null
+			},
+			{
+				"rpath": "k30",
+				"old_value": "bafyreigcx356u25dwrk7z7dn3iwnsfquvakxt5s3y43ylj3f3sfwmahck4",
+				"new_value": null
+			}
+		],
+		"proof_nodes": "TODO",
+		"firehose_cids": "TODO"
+	}
+}
