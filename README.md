@@ -39,11 +39,13 @@ CAR paths are relative to the root of this git repo.
 
 `firehose_cids` is the CIDs you'd expect to broadcast on "the firehose" in the `blocks` CAR. That is, the union of `created_nodes`, `new_value`s from `record_ops`, and any additional MST blocks you need for exclusion proofs of deleted records. In these test cases I aim to encode the *minimal* set of blocks, but it is legal to include superfluous blocks (within reason).
 
+It should also be possible to run these tests "backwards", applying the ops list to `mst_a` and checking whether you end up at `mst_b` (optionally verifying inclusion/exclusion proofs as you go).
+
 ## About The "Exhaustive" Tests
 
 You can use the test cases without having read/understood this section, but it might be informative if you're trying to understand why your tests aren't passing, or if you want to know what's actually being tested and why.
 
-There are infinitely many possible valid MST states, but I think *most* of the interesting trees (for diffing purposes) can be enumerated as "subset-trees" of the following base tree:
+There are infinitely many possible valid MST states (so we can never do truly exhaustive testing), but I think *most* of the interesting trees (for diffing purposes) can be enumerated as "subset-trees" of the following base tree:
 
 ```
                                 |
@@ -69,8 +71,8 @@ If we were to diff every possible pair of these trees, that gives us 16384 test 
 
 # CAR Canonicalization
 
-A "canonical" CAR file is one where the blocks are stored in CID-sorted order. (NOTE: sorted on their byte representation! This is different to the sort of their string representation!). There should be no duplicate blocks, and no unnecessary blocks.
+A "canonical" CAR file is one where the blocks are stored in CID-sorted order, with no duplicates or extras. (NOTE: CIDs are sorted on their byte representation! This is different to the sort of their base32 string representation!)
 
-atproto itself doesn't (currently) care about the order of blocks within a CAR, but sorting makes the test cases deterministic and easier to compare against. For validating your own test results (when a CAR is part of the reference result), it's up to you whether you parse the CAR and compare it logically, or serialise a canonical CAR and compare against my bytes.
+atproto itself doesn't (currently) care about the order of blocks within a CAR, but sorting makes the test cases deterministic and easier to compare against. For validating your own test results (when a CAR is part of the reference result), it's up to you whether you parse the CAR and compare it logically, or serialise a canonical CAR and compare against the reference CAR bytes.
 
-For these tests, the "root" of the CAR is the MST root, there is no commit object.
+For these tests, the "root" of the CAR is the MST root, and there is no commit object.
