@@ -69,6 +69,8 @@ If we were to diff every possible pair of these trees, that gives us 16384 test 
 
 # CAR Canonicalization
 
-A "canonical" CAR file is one where the blocks are stored in CID-sorted order. (I don't think it matters whether you sort the binary or string representation of CIDs?). There should be no duplicate blocks, and no unnecessary blocks.
+A "canonical" CAR file is one where the blocks are stored in CID-sorted order. (NOTE: sorted on their byte representation! This is different to the sort of their string representation!). There should be no duplicate blocks, and no unnecessary blocks.
 
 atproto itself doesn't (currently) care about the order of blocks within a CAR, but sorting makes the test cases deterministic and easier to compare against.
+
+For these tests, the "root" of the CAR is the MST root, there is no commit object.
