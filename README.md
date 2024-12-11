@@ -1,5 +1,6 @@
-# mst-test-suite
-test suite for atproto-flavour merkle search tree ops
+# MST Test Suite
+
+Test suite for [atproto-flavour](https://atproto.com/specs/repository) merkle search tree ops.
 
 Note: this is very WIP, test format may change based on feedback.
 
@@ -40,20 +41,22 @@ CAR paths are relative to the root of this git repo.
 
 ## About The Exhaustive Tests
 
-There are infinitely many possible valid MST states, but I think *most* of the interesting trees (for diffing purposes) can be enumerated as "subset-trees" of the following tree:
+You can use the test cases without having read/understood this section, but it might be informative if you're trying to understand why your tests aren't passing, or if you want to know what's actually being tested and why.
+
+There are infinitely many possible valid MST states, but I think *most* of the interesting trees (for diffing purposes) can be enumerated as "subset-trees" of the following base tree:
 
 ```
-                                  |
-                          (. "k30", h=2 .)
-                  ________/              \_________
-                 /                                 \
-        (. "k11", h=1 .)                    (. "k34", h=1 .)
-        /              \                    /              \
-(. "k00", h=0 .) (. "k12", h=0 .)   (. "k32", h=0 .) (. "k35", h=0 .)
+                               |
+                        (. "k30",h=2 .)
+                 _______/             \_________
+                /                               \
+        (. "k11",h=1 .)                   (. "k34",h=1 .)
+        /             \                   /             \
+(. "k00",h=0 .) (. "k12",h=0 .)   (. "k32",h=0 .) (. "k35",h=0 .)
 
 ```
 
-The rpaths here ("k*") were "mined" to be at the required heights to produce this particular MST shape.
+The rpaths here (`k*`) were "mined" to be at the required heights (denoted by `h`) to produce this particular MST shape (i.e. a "perfect" binary tree).
 
 There are 7 nodes in the full tree, each containing one rpath and two child nodes (except for the leaf nodes, with no children).
 
