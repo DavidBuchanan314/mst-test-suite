@@ -39,7 +39,7 @@ CAR paths are relative to the root of this git repo.
 
 `firehose_cids` is the CIDs you'd expect to broadcast on "the firehose" in the `blocks` CAR. That is, the union of `created_nodes`, `new_value`s from `record_ops`, and any additional MST blocks you need for exclusion proofs of deleted records. In these test cases I aim to encode the *minimal* set of blocks, but it is legal to include superfluous blocks (within reason).
 
-## About The Exhaustive Tests
+## About The "Exhaustive" Tests
 
 You can use the test cases without having read/understood this section, but it might be informative if you're trying to understand why your tests aren't passing, or if you want to know what's actually being tested and why.
 
