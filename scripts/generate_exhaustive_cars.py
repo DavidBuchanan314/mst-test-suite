@@ -1,8 +1,11 @@
 from typing import BinaryIO
+import json
+
 from atmst.mst.node import MSTNode
 from atmst.mst.node_store import NodeStore
 from atmst.mst.node_wrangler import NodeWrangler
 from atmst.mst.node_walker import NodeWalker
+from atmst.mst.diff import very_slow_mst_diff, record_diff
 from atmst.blockstore import MemoryBlockStore
 from atmst.blockstore.car_file import encode_varint
 import cbrrr
@@ -44,6 +47,8 @@ bs = MemoryBlockStore()
 ns = NodeStore(bs)
 wrangler = NodeWrangler(ns)
 
+roots = []
+
 for i in range(2**len(keys)):
 	filename = f"./cars/exhaustive/exhaustive_{i:03d}.car"
 	root = ns.get_node(None).cid
@@ -64,3 +69,38 @@ for i in range(2**len(keys)):
 		car = CarWriter(carfile, root)
 		for cid, val in sorted(car_blocks, key=lambda x: bytes(x[0])):
 			car.write_block(cid, val)
+
+	roots.append(root)
+
+# generate exhaustive test cases
+for ai, root_a in enumerate(roots):
+	for bi, root_b in enumerate(roots):
+		filename = f"./tests/diff/exhaustive/exhaustive_{ai:03d}_{bi:03d}.json"
+		print(filename)
+		car_a = f"./cars/exhaustive/exhaustive_{ai:03d}.car"
+		car_b = f"./cars/exhaustive/exhaustive_{bi:03d}.car"
+		created_nodes, deleted_nodes = very_slow_mst_diff(ns, root_a, root_b)
+		record_ops = []
+		for delta in record_diff(ns, created_nodes, deleted_nodes):
+			record_ops.append({
+				"rpath": delta.path,
+				"old_value": None if delta.prior_value is None else delta.prior_value.encode(),
+				"new_value": None if delta.later_value is None else delta.later_value.encode()
+			})
+		testcase = {
+			"$type": "mst-diff",
+			"description": f'procedurally generated MST diff test case between MST {ai} and {bi}',
+			"inputs": {
+				"mst_a": car_a,
+				"mst_b": car_b
+			},
+			"results": {
+				"created_nodes": sorted([cid.encode() for cid in created_nodes]),
+				"deleted_nodes": sorted([cid.encode() for cid in deleted_nodes]),
+				"record_ops": sorted(record_ops, key=lambda x: x["rpath"]),
+				"proof_nodes": "TODO",
+				"firehose_cids": "TODO"
+			}
+		}
+		with open(filename, "w") as jsonfile:
+			json.dump(testcase, jsonfile, indent="\t")

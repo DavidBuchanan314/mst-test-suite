@@ -6,6 +6,8 @@ Note: this is very WIP, test format may change based on feedback.
 
 At time of writing, I've only validated test cases against my own implementation. They may be wrong!
 
+This test suite is not authoritative but it intends to strictly conform to the atproto specification.
+
 ## Diff test case format
 
 ```json
@@ -26,6 +28,7 @@ At time of writing, I've only validated test cases against my own implementation
 				"new_value": "b32cid or null",
 			}, "..."
 		],
+		"proof_nodes": ["b32cid", "..."],
 		"firehose_cids": ["b32cid", "..."]
 	}
 }
@@ -33,11 +36,21 @@ At time of writing, I've only validated test cases against my own implementation
 
 CAR paths are relative to the root of this git repo.
 
-`created_nodes`, `deleted_nodes`, and `firehose_cids` are lists of base32-encoded CIDs. Logically they are sets, and the order of the elements does not matter for correctness, but for consistency they are stored in string-sorted order.
+`created_nodes`, `deleted_nodes`, `proof_nodes`, and `firehose_cids` are lists of base32-encoded CIDs. Logically they are sets, and the order of the elements does not matter for correctness, but for consistency they are stored in string-sorted order.
 
 `record_ops` is also logically a set, but is similarly stored in rpath-sorted order. "created" records have `old_value=null`, "deleted" records have `new_value=null`, and "updated" records have non-null values for both.
 
-`firehose_cids` is the CIDs you'd expect to broadcast on "the firehose" in the `blocks` CAR. That is, the union of `created_nodes`, `new_value`s from `record_ops`, and any additional MST blocks you need for exclusion proofs of deleted records. In these test cases I aim to encode the *minimal* set of blocks, but it is legal to include superfluous blocks (within reason).
+`proof_nodes` is the CIDs of the MST nodes required for:
+
+1. inclusion proofs for all newly created records
+
+2. deletion/exclusion proofs for all newly deleted records
+
+In *most* cases this is identical to the `created_nodes` list, but in certain deletion edge-cases it is a superset of it. (I don't think it's ever a subset? need to test this.) (TODO: if it really is a superset, could save space in test cases by only recording the "extra" CIDs here)
+
+`firehose_cids` is the set of CIDs you'd expect to broadcast on the "firehose" in the `blocks` CAR (minus the commit object). That is, the union of `created_nodes`, `new_value`s from `record_ops`, and `proof_nodes`. In these test cases I aim to encode the *minimal* set of blocks, but it is legal to include superfluous blocks (within reason).
+
+TODO: is `firehose_cids` pointless?
 
 It should also be possible to run these tests "backwards", applying the ops list to `mst_a` and checking whether you end up at `mst_b` (optionally verifying inclusion/exclusion proofs as you go).
 
@@ -68,6 +81,7 @@ There are $2^7$ (128) possible subset-trees (including the empty tree, and the o
 
 If we were to diff every possible pair of these trees, that gives us 16384 test cases - a lot, but still practical to test them all!
 
+Note that this set of test cases currently only tests record creation and deletion, not updates.
 
 # CAR Canonicalization
 
