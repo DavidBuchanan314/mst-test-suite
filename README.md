@@ -34,7 +34,7 @@ This test suite is not authoritative but it intends to strictly conform to the a
 }
 ```
 
-CAR paths are relative to the root of this git repo.
+CAR paths are relative to the root of this git repo. Note: the CARs here only store MST blocks, no record values are stored (they're not relevant to the tests).
 
 `created_nodes`, `deleted_nodes`, `proof_nodes`, and `firehose_cids` are lists of base32-encoded CIDs. Logically they are sets, and the order of the elements does not matter for correctness, but for consistency they are stored in string-sorted order.
 
