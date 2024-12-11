@@ -7,17 +7,17 @@
 	},
 	"results": {
 		"created_nodes": [
-			"bafyreifo3t352zwrhezotm7ng467zz4fplmk5sgteqgbimgsetrxl5zaty"
+			"bafyreihptktiermdhvwp4uep5gabof4m2veoh6f53qyn43iusomq3ausgi"
 		],
 		"deleted_nodes": [
-			"bafyreidawhgc3akjwsetoil52stbdb4bwluwep6uargc5pczpmdj64pi7i",
-			"bafyreih47hnptmsi6i6hj5k2z4w4w5xybrvah3ynzsxx4axauhn6p7e3nm",
-			"bafyreihh2kx26fxe3wkyjnsr5y23mwujnjmxvhf65ajlwuermhjldvojpi"
+			"bafyreia7t4o3s4hbrh5eowltoirsdiept3zl5go4tbjkxm4j6o64meux4y",
+			"bafyreibuwxskdkz52m5e6yt3ap3egbenmyubydflheirtoqg5i4gbvwsnq",
+			"bafyreihopqe54ce2v2mwxbvxnjcjuwdibgrthqnogyl5242jip4ekxrwte"
 		],
 		"record_ops": [
 			{
-				"rpath": "k30",
-				"old_value": "bafyreigcx356u25dwrk7z7dn3iwnsfquvakxt5s3y43ylj3f3sfwmahck4",
+				"rpath": "k/39",
+				"old_value": "bafyreifx5ydm24lsvdtcyb73yny6cpary6z4mhtglp6insngv2bjd2jwam",
 				"new_value": null
 			}
 		],

@@ -7,15 +7,15 @@
 	},
 	"results": {
 		"created_nodes": [
-			"bafyreifntoqijmybwn273vczczdtu2am6dtyxjp45e2ku2pm76kuvnm5hm"
+			"bafyreihpmbjnda5fk7xqbmkozbgzv7p7t2aspcwyeip7l6ke2sbzyqsrgi"
 		],
 		"deleted_nodes": [
-			"bafyreiaiohevvvx65ipwzd57pud7xp3wdn2jpgqhkrh7klixpclkpnhyzy"
+			"bafyreifhxfhledoriinm4wn7npnnnxbqyluzymowh7mchmlkvgezdqigye"
 		],
 		"record_ops": [
 			{
-				"rpath": "k11",
-				"old_value": "bafyreiaifjnt72ikz6u6jpopx4zfe3qherxd2bitvecyy7c5x252bqp4va",
+				"rpath": "k/02",
+				"old_value": "bafyreifuza3xd7ji4flhybeao4v62ylud7kur7tfjnyfjk5d26udlxzpfu",
 				"new_value": null
 			}
 		],

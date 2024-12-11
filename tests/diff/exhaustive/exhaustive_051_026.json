@@ -7,28 +7,28 @@
 	},
 	"results": {
 		"created_nodes": [
-			"bafyreib3kmwengjh5lw62mug3hgd3fewdehznx3h4dola65p4zooay4kz4",
-			"bafyreihkoufdpelh3luk42nibittly6kv3svc3mcg3uaabkbkgql7mdlnm",
-			"bafyreihofsy7dcz2sdok234efel4ydfgepsgfn7ksfjot2mqi4avrschx4"
+			"bafyreia2fbzol3ivp5vgmil372qzbrq6p5lbv347dozj36vwmtm35yzyta",
+			"bafyreies4yierbqkrdjojdm4as2zdnzsk76jzgtb3uj2pgzwheinfklkry",
+			"bafyreifjob5lhtbgf5nikaoriuo5v4x46gbfz3tpedgb43cdkcgpyvhqrm"
 		],
 		"deleted_nodes": [
-			"bafyreickt7jjyymifaeml2yugjpx24c4whnnrxj3ev7jne36tb4zn7drg4",
-			"bafyreieiasyslyxsoow7begvmx2unp7euemsllcrshfgtg52yyiappc6au"
+			"bafyreiefbudozdlewrlmxilwyx5olw7sweipqpefigwntynv5reev7ykai",
+			"bafyreihvrp2soumle5anatn6n5lqmsdbkgxp2dp3zvimwonojupjabvzwe"
 		],
 		"record_ops": [
 			{
-				"rpath": "k00",
-				"old_value": "bafyreicrga7zulrgr6wyvsxsupks4qlpdm273vy33kc46uqpw7hiv47rzq",
+				"rpath": "k/00",
+				"old_value": "bafyreifnvbnowl4sk26xufwy7n22c7xv2wu6sl6v7kqeniutbsdjvp2zry",
 				"new_value": null
 			},
 			{
-				"rpath": "k30",
+				"rpath": "k/39",
 				"old_value": null,
-				"new_value": "bafyreigcx356u25dwrk7z7dn3iwnsfquvakxt5s3y43ylj3f3sfwmahck4"
+				"new_value": "bafyreifx5ydm24lsvdtcyb73yny6cpary6z4mhtglp6insngv2bjd2jwam"
 			},
 			{
-				"rpath": "k34",
-				"old_value": "bafyreifm6isbphnizkyp5tdpn6q6t2jutlw74s374kihsopf5uxvzx6hdy",
+				"rpath": "k/48",
+				"old_value": "bafyreico7yx5tzlzbv6yragamc3urhb47xuiskxyf2facppuzxavwbidjq",
 				"new_value": null
 			}
 		],

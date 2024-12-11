@@ -7,17 +7,17 @@
 	},
 	"results": {
 		"created_nodes": [
-			"bafyreibsjd66enryhlsskdr2qhked4dsvwwlqkybbdtfvg5nhvtb5jvu6u",
-			"bafyreiffjnglpbdmrjncpnh3lijwbatsgazzvuqsvk7ikmmqdsdmifr6i4"
+			"bafyreicfm3pueddlt4mz5pkcezxdb3ddj5asrtvoqh2yxpb7mkkcxemmqy",
+			"bafyreihksf4vlzkzh5pbntfre45dhgc4fjq6d4c5tem46kutjwyreleuz4"
 		],
 		"deleted_nodes": [
-			"bafyreicuqwno53lcl6kasr2w2znf2biqeuhi7iqgoso4xr6prsizga3jcu"
+			"bafyreicjols3jtm4j3dsc77juxfabowf63frxfektqkwad5znxz5b35s24"
 		],
 		"record_ops": [
 			{
-				"rpath": "k34",
+				"rpath": "k/48",
 				"old_value": null,
-				"new_value": "bafyreifm6isbphnizkyp5tdpn6q6t2jutlw74s374kihsopf5uxvzx6hdy"
+				"new_value": "bafyreico7yx5tzlzbv6yragamc3urhb47xuiskxyf2facppuzxavwbidjq"
 			}
 		],
 		"proof_nodes": "TODO",

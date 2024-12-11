@@ -8,12 +8,12 @@
 	"results": {
 		"created_nodes": [],
 		"deleted_nodes": [
-			"bafyreidq3czzom2n5vigfe2j2zrn3qzzgnb3wum2e3gzlauujir4nnx72a"
+			"bafyreic6q6n2toz3bk32zcvgf5bjocu524n3ydfoj3k2oc7vuuzkquwezi"
 		],
 		"record_ops": [
 			{
-				"rpath": "k34",
-				"old_value": "bafyreifm6isbphnizkyp5tdpn6q6t2jutlw74s374kihsopf5uxvzx6hdy",
+				"rpath": "k/48",
+				"old_value": "bafyreico7yx5tzlzbv6yragamc3urhb47xuiskxyf2facppuzxavwbidjq",
 				"new_value": null
 			}
 		],

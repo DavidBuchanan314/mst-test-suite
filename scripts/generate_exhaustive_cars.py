@@ -31,7 +31,7 @@ key_heights = [0, 1, 0, 2, 0, 1, 0] # if all these keys are added to a MST, it'l
 i = 0
 for height in key_heights:
 	while True:
-		key = f"k{i:02d}"
+		key = f"k/{i:02d}"
 		i += 1
 		if MSTNode.key_height(key) == height:
 			keys.append(key)

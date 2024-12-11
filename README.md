@@ -61,17 +61,17 @@ You can use the test cases without having read/understood this section, but it m
 There are infinitely many possible valid MST states (so we can never do truly exhaustive testing), but I think *most* of the interesting trees (for diffing purposes) can be enumerated as "subset-trees" of the following base tree:
 
 ```
-                                |
-                         (. "k30",h=2 .)
-                 ________/             \________
-                /                               \
-        (. "k11",h=1 .)                   (. "k34",h=1 .)
-        /             \                   /             \
-(. "k00",h=0 .) (. "k12",h=0 .)   (. "k32",h=0 .) (. "k35",h=0 .)
+                                    |
+                            (. "k/39", h=2 .)
+                   _________/               \_________
+                  /                                   \
+         (. "k/02", h=1 .)                     (. "k/48", h=1 .)
+         /               \                     /               \
+(. "k/00", h=0 .) (. "k/04", h=0 .)   (. "k/40", h=0 .) (. "k/49", h=0 .)
 
 ```
 
-The rpaths here (`k*`) were "mined" to be at the required heights (denoted by `h`) to produce this particular MST shape (i.e. a "perfect" binary tree).
+The rpaths here (`k/*`) were "mined" to be at the required heights (denoted by `h`) to produce this particular MST shape (i.e. a "perfect" binary tree).
 
 There are 7 nodes in the full tree, each containing one rpath and two child nodes (except for the leaf nodes, with no children).
 
