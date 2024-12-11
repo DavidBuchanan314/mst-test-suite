@@ -46,9 +46,9 @@ You can use the test cases without having read/understood this section, but it m
 There are infinitely many possible valid MST states, but I think *most* of the interesting trees (for diffing purposes) can be enumerated as "subset-trees" of the following base tree:
 
 ```
-                               |
-                        (. "k30",h=2 .)
-                 _______/             \_________
+                                |
+                         (. "k30",h=2 .)
+                 ________/             \________
                 /                               \
         (. "k11",h=1 .)                   (. "k34",h=1 .)
         /             \                   /             \
