@@ -71,6 +71,6 @@ If we were to diff every possible pair of these trees, that gives us 16384 test 
 
 A "canonical" CAR file is one where the blocks are stored in CID-sorted order. (NOTE: sorted on their byte representation! This is different to the sort of their string representation!). There should be no duplicate blocks, and no unnecessary blocks.
 
-atproto itself doesn't (currently) care about the order of blocks within a CAR, but sorting makes the test cases deterministic and easier to compare against.
+atproto itself doesn't (currently) care about the order of blocks within a CAR, but sorting makes the test cases deterministic and easier to compare against. For validating your own test results (when a CAR is part of the reference result), it's up to you whether you parse the CAR and compare it logically, or serialise a canonical CAR and compare against my bytes.
 
 For these tests, the "root" of the CAR is the MST root, there is no commit object.
