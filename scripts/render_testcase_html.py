@@ -1,12 +1,13 @@
-from typing import List
+from typing import List, Tuple
 
 import json
 import tempfile
 import time
 
 from atmst.mst.node_store import NodeStore
+from atmst.blockstore import BlockStore, OverlayBlockStore
 from atmst.blockstore.car_file import ReadOnlyCARBlockStore
-from cbrrr import CID
+from cbrrr import CID, decode_dag_cbor
 
 import graphviz
 import pydot
@@ -82,18 +83,43 @@ class TreeGrapher:
 			self.plte[node_cid] = color
 		self.node(node_cid.encode(), " | ".join(members), color=color) # min-width, they'll grow to fit
 
-def car_to_svg(car_path: str, plte={}) -> str:
-	with open(car_path, "rb") as carfile:
-		bs = ReadOnlyCARBlockStore(carfile)
-		ns = NodeStore(bs)
-		dot = TreeGrapher(ns, bs.car_root, plte).graph()
+def car_to_svg(car_path: str, plte={}) -> Tuple[BlockStore, str]:
+	#with open(car_path, "rb") as carfile:
+	carfile = open(car_path, "rb")
+	bs = ReadOnlyCARBlockStore(carfile)
+	ns = NodeStore(bs)
+	dot = TreeGrapher(ns, bs.car_root, plte).graph()
 	graph = pydot.graph_from_dot_data(str(dot))[0] # yeah we import all of pydot just for this lol
 	svg = graph.create_svg().decode()
 	dtd, tag, body = svg.partition("<svg") # strip xml dtd
-	return tag + body
+	return bs, tag + body
 
-def make_cid_ul(data: List[str], plte: dict) -> str:
-	return f"<ul>{"".join(f'<li style="background-color: {plte[CID.decode(x)]}; padding: 0.5em 1em; width: fit-content">{x}</li>' for x in data)}</ul>"
+def make_cid_ul(ns: NodeStore, data: List[str], plte: dict) -> str:
+	rows = []
+	for cid_str in data:
+		cid = CID.decode(cid_str)
+		node = decode_dag_cbor(ns.get_node(cid).serialised)
+		# convert cids to strings
+
+		if node["l"]:
+			node["l"] = node["l"].encode()
+		for e in node["e"]:
+			e["k"] = e["k"].decode()
+			if e["t"]:
+				e["t"] = e["t"].encode()
+			if e["v"]:
+				e["v"] = e["v"].encode()
+		#print(node)
+		node_json = json.dumps(node, indent=2)
+		rows.append(f'''
+			<li style="background-color: {plte[cid]}; padding: 0.5em 1em; width: fit-content">
+			<details>
+				<summary>{cid_str}</summary>
+				<pre>{node_json}</pre>
+			</details>
+			</li>
+		''')
+	return f"<ul>{"".join(rows)}</ul>"
 
 def render_testcase(testcase_path: str, out_path: str):
 	with open(out_path, "w") as html:
@@ -112,6 +138,23 @@ def render_testcase(testcase_path: str, out_path: str):
 			}
 			td {
 				padding: 1em;
+				text-align: center;
+			}
+			th > h2 {
+				margin: 0.5em 1em;
+			}
+			.cidlist > td {
+				text-align: left;
+				vertical-align: top;
+			}
+			th {
+				text-align: left;
+			}
+			td > ul {
+				padding-left: 0;
+			}
+			td li {
+				list-style-type: none;
 			}
 		</style>
 	</head>
@@ -124,13 +167,15 @@ def render_testcase(testcase_path: str, out_path: str):
 		car_a = testcase["inputs"]["mst_a"]
 		car_b = testcase["inputs"]["mst_b"]
 		plte = {}
-		svg_a = car_to_svg(car_a, plte)
-		svg_b = car_to_svg(car_b, plte)
+		bs_a, svg_a = car_to_svg(car_a, plte)
+		bs_b, svg_b = car_to_svg(car_b, plte)
+		bs = OverlayBlockStore(bs_a, bs_b)
+		ns = NodeStore(bs)
 
 		#svg_uri = "data:image/svg+xml;base64," + base64.b64encode(svg).decode()
 		html.write(f"""
 		<h1>Test case: {testcase_path}</h1>
-		<p>protip: hover over graph nodes for their CIDs</p>
+		<p>hint: hover over graph nodes for their CIDs</p>
 		<table>
 			<tr>
 				<th><h2>MST A: {car_a}</h2></th>
@@ -141,10 +186,19 @@ def render_testcase(testcase_path: str, out_path: str):
 				<td>{svg_b}</td>
 			</tr>
 		</table>
-		<h2>Created Nodes:</h2>
-		{make_cid_ul(testcase["results"]["created_nodes"], plte)}
-		<h2>Deleted Nodes:</h2>
-		{make_cid_ul(testcase["results"]["deleted_nodes"], plte)}
+		<br/>
+		<h1>Expected diff results:</h1>
+		<p>hint: click a CID to expand</p>
+		<table>
+			<tr>
+				<th><h2>Deleted Nodes:</h2></th>
+				<th><h2>Created Nodes:</h2></th>
+			</tr>
+			<tr class="cidlist">
+				<td>{make_cid_ul(ns, testcase["results"]["deleted_nodes"], plte)}</td>
+				<td>{make_cid_ul(ns, testcase["results"]["created_nodes"], plte)}</td>
+			</tr>
+		</table>
 		<h2>Ops:</h2>
 		<ul>{"".join(f"<li>{"update" if (op["old_value"] and op["new_value"]) else ("create" if op["new_value"] else "delete")} {op["rpath"]!r}</li>" for op in testcase["results"]["record_ops"])}</ul>
 	</body>
