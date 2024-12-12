@@ -8,6 +8,16 @@ At time of writing, I've only validated test cases against my own implementation
 
 This test suite is not authoritative but it intends to strictly conform to the atproto specification.
 
+## Test Case Visualiser
+
+To aid debugging, I wrote a tool to visualise test cases.
+
+Run `python3 scripts/render_testcase_html.py path_to_testcase.json` and an HTML document will be generated and rendered in your browser. Like so:
+
+![image](https://github.com/user-attachments/assets/db6eeab3-2784-4b55-a346-0787ad03d1cc)
+
+TODO: document dependencies and how to install them
+
 ## Diff test case format
 
 ```json
