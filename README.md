@@ -18,7 +18,15 @@ Run `python3 scripts/render_testcase_html.py path_to_testcase.json` and an HTML 
 
 TODO: document dependencies and how to install them
 
-## Diff test case format
+## Using the Tests
+
+Test cases are stored as JSON files in the `./tests/` directory. They're organised into subdirectories, but you shouldn't expect any particular layout. It's recommended that you find the tests by recursively scanning the directory for all `.json` files.
+
+There are multiple test types, each with their own format. They're identified by a `$type` field.
+
+The format of each test type is specified below. (Currently only a `mst-diff` type is specified, but more are planned.)
+
+### `mst-diff` test case format
 
 ```json
 {
