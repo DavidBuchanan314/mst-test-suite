@@ -103,6 +103,13 @@ def render_testcase(testcase_path: str, out_path: str):
 			body {
 				font-family: monospace;
 			}
+			table, th, td {
+				border: 1px solid black;
+				border-collapse: collapse;
+			}
+			td {
+				padding: 1em;
+			}
 		</style>
 	</head>
 	<body>
@@ -121,14 +128,22 @@ def render_testcase(testcase_path: str, out_path: str):
 		html.write(f"""
 		<h1>Test case: {testcase_path}</h1>
 		<p>protip: hover over graph nodes for their CIDs</p>
-		<h2>MST A: {car_a}</h2>
-		{svg_a}
-		<h2>MST B: {car_b}</h2>
-		{svg_b}
-		<h2>Created Nodes:</h1>
+		<table>
+			<tr>
+				<th><h2>MST A: {car_a}</h2></th>
+				<th><h2>MST B: {car_b}</h2></th>
+			</tr>
+			<tr>
+				<td>{svg_a}</td>
+				<td>{svg_b}</td>
+			</tr>
+		</table>
+		<h2>Created Nodes:</h2>
 		{make_cid_ul(testcase["results"]["created_nodes"], plte)}
-		<h2>Deleted Nodes:</h1>
+		<h2>Deleted Nodes:</h2>
 		{make_cid_ul(testcase["results"]["deleted_nodes"], plte)}
+		<h2>Ops:</h2>
+		<ul>{"".join(f"<li>{"update" if (op["old_value"] and op["new_value"]) else ("create" if op["new_value"] else "delete")} {op["rpath"]!r}</li>" for op in testcase["results"]["record_ops"])}</ul>
 	</body>
 </html>
 	""")
