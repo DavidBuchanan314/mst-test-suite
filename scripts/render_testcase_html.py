@@ -46,15 +46,18 @@ class TreeGrapher:
 		self.dot = graphviz.Digraph(node_attr={"shape": "record"})
 		if title is not None:
 			self.dot.attr(label=title, labelloc="t")
-		self.dot.node("root", "root", width="0", height="0")
+		self.node("root", "root")
 		self.dot.edge("root", self.root.encode())
-		self.graph_node(self.root)
+		self.recurse_node(self.root)
 		return self.dot
 
 	def edge(self, src: CID, dst: CID):
 		self.dot.edge(f"{src.encode()}:{dst.encode()}:s", f"{dst.encode()}:n", tooltip=dst.encode())
 
-	def graph_node(self, node_cid: CID):
+	def node(self, name: str, label: str, color=None):
+		self.dot.node(name, label, fontname="Courier-Bold", fontsize="10pt", width="0", height="0", style="filled", fillcolor=color)
+
+	def recurse_node(self, node_cid: CID):
 		node = self.ns.get_node(node_cid)
 		members = []
 		sub = node.subtrees[0]
@@ -62,7 +65,7 @@ class TreeGrapher:
 		if sub is not None:
 			members.append(f"<{sub.encode()}> {DOT}")
 			self.edge(node_cid, sub)
-			self.graph_node(sub)
+			self.recurse_node(sub)
 		else:
 			members.append(DOT)
 		for sub, k in zip(node.subtrees[1:], node.keys):
@@ -70,14 +73,14 @@ class TreeGrapher:
 			if sub is not None:
 				members.append(f"<{sub.encode()}> {DOT}")
 				self.edge(node_cid, sub)
-				self.graph_node(sub)
+				self.recurse_node(sub)
 			else:
 				members.append(DOT)
 		color = self.plte.get(node_cid)
 		if color is None:
 			color = PALETTE[len(self.plte)]
 			self.plte[node_cid] = color
-		self.dot.node(node_cid.encode(), " | ".join(members), width="0", height="0", style="filled", fillcolor=color) # min-width, they'll grow to fit
+		self.node(node_cid.encode(), " | ".join(members), color=color) # min-width, they'll grow to fit
 
 def car_to_svg(car_path: str, plte={}) -> str:
 	with open(car_path, "rb") as carfile:
@@ -151,10 +154,14 @@ def render_testcase(testcase_path: str, out_path: str):
 
 if __name__ == "__main__":
 	import sys
-	if len(sys.argv) != 2:
-		print(f"USAGE: {sys.argv[0]} path_to_testcase.json")
+	if len(sys.argv) not in [2, 3]:
+		print(f"USAGE: {sys.argv[0]} path_to_testcase.json [output.html]")
+		print("if no output is specified, a tmp file is created and opened in a browser")
 		exit()
-	with tempfile.NamedTemporaryFile(suffix="_testcase.html") as tf:
-		render_testcase(sys.argv[1], tf.name)
-		webbrowser.open(tf.name)
-		time.sleep(1) # race condition: give the browser time to open the fie...
+	if len(sys.argv) == 3:
+		render_testcase(sys.argv[1], sys.argv[2])
+	else:
+		with tempfile.NamedTemporaryFile(suffix="_testcase.html") as tf:
+			render_testcase(sys.argv[1], tf.name)
+			webbrowser.open(tf.name)
+			time.sleep(1) # race condition: give the browser time to open the fie...
