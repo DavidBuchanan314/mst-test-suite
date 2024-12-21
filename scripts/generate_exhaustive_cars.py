@@ -95,13 +95,9 @@ for ai, root_a in enumerate(roots):
 				"new_value": None if delta.later_value is None else delta.later_value.encode()
 			})
 			if delta.later_value is None: # deletion
-				found_record, exclusion_proof = proof.find_rpath_and_build_proof(ns, root_b, delta.path) # TODO: should probably write dedicated functions for inclusion/exclusion proofs that throws exceptions if the record is found/not found
-				assert(found_record is None) # it's supposed to be deleted!
-				proof_nodes.update(exclusion_proof)
+				proof_nodes.update(proof.build_exclusion_proof(ns, root_b, delta.path))
 			else: # update or create
-				found_record, inclusion_proof = proof.find_rpath_and_build_proof(ns, root_b, delta.path)
-				assert(found_record is not None) # it's supposed to exist
-				proof_nodes.update(inclusion_proof)
+				proof_nodes.update(proof.build_inclusion_proof(ns, root_b, delta.path))
 
 		#if proof_nodes == created_nodes:
 		#	identical_proof_and_creation_count += 1
