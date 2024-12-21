@@ -26,7 +26,9 @@
 				"new_value": "bafyreifuza3xd7ji4flhybeao4v62ylud7kur7tfjnyfjk5d26udlxzpfu"
 			}
 		],
-		"proof_nodes": "TODO",
+		"proof_nodes": [
+			"bafyreicbliswkc3njampgqftztxgs4fsxsfwndhcwslweszzmscehm24vu"
+		],
 		"firehose_cids": "TODO"
 	}
 }

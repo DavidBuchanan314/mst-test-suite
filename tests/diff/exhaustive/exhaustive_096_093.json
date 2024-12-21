@@ -44,7 +44,13 @@
 				"new_value": null
 			}
 		],
-		"proof_nodes": "TODO",
+		"proof_nodes": [
+			"bafyreibwsjfy24l5mhyjeyu4wkieq7iwiqsdczf2gr6hq3sx6lydozgt54",
+			"bafyreidf2evxkgnmgtqcwtn2aik3lrrxmftryjtgjvpeuiduc2fstsgete",
+			"bafyreifabyi2frcy4wquw2csb7rjvdoayvt3v4p6azs53zryifr7u7rldu",
+			"bafyreihenbh3av4aduev76zducikbqz2ox6joa676bp3cj75fnndjdar6m",
+			"bafyreihfxxt5552ru7outcwloz6kkvyguotvnzgy6fapdjozqowxw33bdy"
+		],
 		"firehose_cids": "TODO"
 	}
 }

@@ -30,7 +30,13 @@
 				"new_value": "bafyreiebxldcqft4fifkvdojvpbn5hyt73xskbebux2io4s734kz657emi"
 			}
 		],
-		"proof_nodes": "TODO",
+		"proof_nodes": [
+			"bafyreia7t4o3s4hbrh5eowltoirsdiept3zl5go4tbjkxm4j6o64meux4y",
+			"bafyreiedgjg54g3j4ifb2mmkm2mcxryvzpwgnjox5v4g63vqqgxnd2zupm",
+			"bafyreifabyi2frcy4wquw2csb7rjvdoayvt3v4p6azs53zryifr7u7rldu",
+			"bafyreihfxxt5552ru7outcwloz6kkvyguotvnzgy6fapdjozqowxw33bdy",
+			"bafyreihvrp2soumle5anatn6n5lqmsdbkgxp2dp3zvimwonojupjabvzwe"
+		],
 		"firehose_cids": "TODO"
 	}
 }

@@ -23,7 +23,11 @@
 				"new_value": null
 			}
 		],
-		"proof_nodes": "TODO",
+		"proof_nodes": [
+			"bafyreia7t4o3s4hbrh5eowltoirsdiept3zl5go4tbjkxm4j6o64meux4y",
+			"bafyreiedgjg54g3j4ifb2mmkm2mcxryvzpwgnjox5v4g63vqqgxnd2zupm",
+			"bafyreihvrp2soumle5anatn6n5lqmsdbkgxp2dp3zvimwonojupjabvzwe"
+		],
 		"firehose_cids": "TODO"
 	}
 }

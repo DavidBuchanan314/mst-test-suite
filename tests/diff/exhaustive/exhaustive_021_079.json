@@ -39,7 +39,12 @@
 				"new_value": "bafyreibhyijmsdy7kw3um2er2kxjjuzwawposyvfsezd4s46yfz2mbu3nu"
 			}
 		],
-		"proof_nodes": "TODO",
+		"proof_nodes": [
+			"bafyreiakpdjkv4ye4cupwhhn2lodml42nt235eya63i5g4tmkeucyf23y4",
+			"bafyreicssmjvim5mmalb4bxcmdrnvrpxqhrdbdw4ere5eztvfdijznxdmi",
+			"bafyreicwmqkku3k5bncjyi3dp6go7skudmpacucel2vlobno4mgxgyzjla",
+			"bafyreif5lj2axnoe2hlmch5mwlnm7vyx4qvplq7vcdlcxicqnax52lvwwe"
+		],
 		"firehose_cids": "TODO"
 	}
 }

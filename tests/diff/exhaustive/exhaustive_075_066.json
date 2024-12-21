@@ -27,7 +27,9 @@
 				"new_value": null
 			}
 		],
-		"proof_nodes": "TODO",
+		"proof_nodes": [
+			"bafyreic3okp2px7zflpramrkdlzxxfkbnr6mwwleffwghnzrduqtwm5d4m"
+		],
 		"firehose_cids": "TODO"
 	}
 }

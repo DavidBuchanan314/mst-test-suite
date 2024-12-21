@@ -60,11 +60,11 @@ CAR paths are relative to the root of this git repo. Note: the CARs here only st
 
 `proof_nodes` is the CIDs of the MST nodes required for:
 
-1. inclusion proofs for all newly created records
+1. inclusion proofs for all newly created or updated records
 
-2. deletion/exclusion proofs for all newly deleted records
+2. exclusion proofs for all newly deleted records
 
-In *most* cases this is identical to the `created_nodes` list, but in certain deletion edge-cases it is a superset of it. (I don't think it's ever a subset? need to test this.) (TODO: if it really is a superset, could save space in test cases by only recording the "extra" CIDs here)
+This is *often* identical to the `created_nodes` list, but sometimes a superset, and sometimes a subset!
 
 `firehose_cids` is the set of CIDs you'd expect to broadcast on the "firehose" in the `blocks` CAR (minus the commit object). That is, the union of `created_nodes`, `new_value`s from `record_ops`, and `proof_nodes`. In these test cases I aim to encode the *minimal* set of blocks, but it is legal to include superfluous blocks (within reason).
 
