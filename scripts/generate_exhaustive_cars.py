@@ -88,6 +88,7 @@ for ai, root_a in enumerate(roots):
 		created_nodes, deleted_nodes = very_slow_mst_diff(ns, root_a, root_b)
 		record_ops = []
 		proof_nodes = set()
+		no_deletions = True
 		for delta in record_diff(ns, created_nodes, deleted_nodes):
 			record_ops.append({
 				"rpath": delta.path,
@@ -96,8 +97,12 @@ for ai, root_a in enumerate(roots):
 			})
 			if delta.later_value is None: # deletion
 				proof_nodes.update(proof.build_exclusion_proof(ns, root_b, delta.path))
+				no_deletions = False
 			else: # update or create
 				proof_nodes.update(proof.build_inclusion_proof(ns, root_b, delta.path))
+
+		if no_deletions: # commits with no deletions are more well-behaved
+			assert(proof_nodes.issubset(created_nodes))
 
 		#if proof_nodes == created_nodes:
 		#	identical_proof_and_creation_count += 1
