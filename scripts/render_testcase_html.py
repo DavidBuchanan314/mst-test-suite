@@ -198,6 +198,14 @@ def render_testcase(testcase_path: str, out_path: str):
 				<td>{make_cid_ul(ns, testcase["results"]["deleted_nodes"], plte)}</td>
 				<td>{make_cid_ul(ns, testcase["results"]["created_nodes"], plte)}</td>
 			</tr>
+			<tr>
+				<th></th>
+				<th><h2>Proof Nodes:</h2></th>
+			</tr>
+			<tr class="cidlist">
+				<td></td>
+				<td>{make_cid_ul(ns, testcase["results"]["proof_nodes"], plte)}</td>
+			</tr>
 		</table>
 		<h2>Ops:</h2>
 		<ul>{"".join(f"<li>{"update" if (op["old_value"] and op["new_value"]) else ("create" if op["new_value"] else "delete")} {op["rpath"]!r}</li>" for op in testcase["results"]["record_ops"])}</ul>
