@@ -47,6 +47,7 @@ The format of each test type is specified below. (Currently only a `mst-diff` ty
 			}, "..."
 		],
 		"proof_nodes": ["b32cid", "..."],
+		"inductive_proof_nodes": ["b32cid", "..."],
 		"firehose_cids": ["b32cid", "..."]
 	}
 }
@@ -54,7 +55,7 @@ The format of each test type is specified below. (Currently only a `mst-diff` ty
 
 CAR paths are relative to the root of this git repo. Note: the CARs here only store MST blocks, no record values are stored (they're not relevant to the tests).
 
-`created_nodes`, `deleted_nodes`, `proof_nodes`, and `firehose_cids` are lists of base32-encoded CIDs. Logically they are sets, and the order of the elements does not matter for correctness, but for consistency they are stored in string-sorted order.
+`created_nodes`, `deleted_nodes`, `proof_nodes`, `inductive_proof_nodes`, and `firehose_cids` are lists of base32-encoded CIDs. Logically they are sets, and the order of the elements does not matter for correctness, but for consistency they are stored in string-sorted order.
 
 `record_ops` is also logically a set, but is similarly stored in rpath-sorted order. "created" records have `old_value=null`, "deleted" records have `new_value=null`, and "updated" records have non-null values for both.
 
@@ -65,6 +66,8 @@ CAR paths are relative to the root of this git repo. Note: the CARs here only st
 2. exclusion proofs for all newly deleted records
 
 This is *often* identical to the `created_nodes` list, but sometimes a superset, and sometimes a subset!
+
+`inductive_proof_nodes` should be the set of CIDs of the MST nodes required for ["MST Operation Inversion"](https://github.com/bluesky-social/proposals/tree/main/0006-sync-iteration#commit-validation-mst-operation-inversion)
 
 `firehose_cids` is the set of CIDs you'd expect to broadcast on the "firehose" in the `blocks` CAR (minus the commit object). That is, the union of `created_nodes`, `new_value`s from `record_ops`, and `proof_nodes`. In these test cases I aim to encode the *minimal* set of blocks, but it is legal to include superfluous blocks (within reason).
 
