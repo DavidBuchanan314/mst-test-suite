@@ -1,4 +1,4 @@
-from typing import BinaryIO
+from typing import BinaryIO, Optional
 import json
 
 from atmst.mst.node import MSTNode
@@ -6,11 +6,45 @@ from atmst.mst.node_store import NodeStore
 from atmst.mst.node_wrangler import NodeWrangler
 from atmst.mst.node_walker import NodeWalker
 from atmst.mst.diff import very_slow_mst_diff, record_diff
-from atmst.blockstore import MemoryBlockStore
+from atmst.blockstore import MemoryBlockStore, OverlayBlockStore, BlockStore
 from atmst.blockstore.car_file import encode_varint
 from atmst.mst import proof
 import cbrrr
 from cbrrr import CID
+
+class LoggingBlockStoreWrapper(BlockStore):
+	def __init__(self, bs: BlockStore):
+		self.bs = bs
+		self.gets = set()
+	
+	def put_block(self, key: bytes, value: bytes) -> None:
+		self.bs.put_block(key, value)
+
+	def get_block(self, key: bytes) -> bytes:
+		self.gets.add(key)
+		return self.bs.get_block(key)
+
+	def del_block(self, key: bytes) -> None:
+		self.bs.del_block(key)
+
+"""
+class LoggingNodeStore(NodeStore):
+	def __init__(self, bs):
+		self.read_cids = set()
+		self.stored_cids = set()
+		super().__init__(bs)
+
+	def get_node(self, cid: Optional[CID]) -> MSTNode:
+		if cid is None:
+			self.read_cids.add(MSTNode.empty_root().cid)
+		else:
+			self.read_cids.add(cid)
+		return super().get_node(cid)
+
+	def stored_node(self, node: MSTNode) -> MSTNode:
+		self.stored_cids.add(node.cid)
+		return super().stored_node(node)
+"""
 
 class CarWriter:
 	def __init__(self, stream: BinaryIO, root: cbrrr.CID) -> None:
@@ -39,6 +73,8 @@ for height in key_heights:
 			break
 
 vals = [CID.cidv1_dag_cbor_sha256_32_from(cbrrr.encode_dag_cbor({"$type": "mst-test-data", "value_for": k})) for k in keys]
+
+val_for_key = dict(zip(keys, vals))
 
 print(keys)
 print(vals)
@@ -104,6 +140,22 @@ for ai, root_a in enumerate(roots):
 		if no_deletions: # commits with no deletions are more well-behaved
 			assert(proof_nodes.issubset(created_nodes))
 
+		# figure out which blocks are required for inductive proofs.
+		# the idea here is that we use an overlay blockstore and log every "get" that has to fall thru to the lower layer.
+		# those gets are therefore the blocks required for a stateless consumer to verify the proof.
+		upper = MemoryBlockStore()
+		lbs = LoggingBlockStoreWrapper(bs)
+		lns = NodeStore(OverlayBlockStore(upper, lbs))
+		lnw = NodeWrangler(lns)
+		proof_root = root_b
+		for op in record_ops:
+			if op["old_value"] is None:
+				proof_root = lnw.del_record(proof_root, op["rpath"])
+			else:
+				proof_root = lnw.put_record(proof_root, op["rpath"], val_for_key[op["rpath"]])
+		assert(proof_root == root_a) # we're back to where we started
+		inductive_proof_nodes = set(CID(cid) for cid in lbs.gets)
+
 		#if proof_nodes == created_nodes:
 		#	identical_proof_and_creation_count += 1
 		#if proof_nodes.issuperset(created_nodes):
@@ -123,6 +175,7 @@ for ai, root_a in enumerate(roots):
 				"deleted_nodes": sorted([cid.encode() for cid in deleted_nodes]),
 				"record_ops": sorted(record_ops, key=lambda x: x["rpath"]),
 				"proof_nodes": sorted([cid.encode() for cid in proof_nodes]),
+				"inductive_proof_nodes": sorted([cid.encode() for cid in inductive_proof_nodes]),
 				"firehose_cids": "TODO"
 			}
 		}
