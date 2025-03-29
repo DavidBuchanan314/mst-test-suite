@@ -113,6 +113,7 @@ for i in range(2**len(keys)):
 #identical_proof_and_creation_count = 0
 #proof_superset_of_creation_count = 0
 #creation_superset_of_proof_count = 0
+inversion_needs_extra_blocks = 0
 
 # generate exhaustive test cases
 for ai, root_a in enumerate(roots):
@@ -148,13 +149,18 @@ for ai, root_a in enumerate(roots):
 		lns = NodeStore(OverlayBlockStore(upper, lbs))
 		lnw = NodeWrangler(lns)
 		proof_root = root_b
-		for op in record_ops:
+		for op in record_ops[::-1]: # while the order does not effect the final root CID, it does affect the set of CIDs that fall thru
 			if op["old_value"] is None:
 				proof_root = lnw.del_record(proof_root, op["rpath"])
 			else:
 				proof_root = lnw.put_record(proof_root, op["rpath"], val_for_key[op["rpath"]])
 		assert(proof_root == root_a) # we're back to where we started
 		inductive_proof_nodes = set(CID(cid) for cid in lbs.gets)
+
+		delta = inductive_proof_nodes - (created_nodes | proof_nodes)
+		if delta:
+			#print(delta)
+			inversion_needs_extra_blocks += 1
 
 		#if proof_nodes == created_nodes:
 		#	identical_proof_and_creation_count += 1
@@ -185,3 +191,4 @@ for ai, root_a in enumerate(roots):
 #print("identical_proof_and_creation_count", identical_proof_and_creation_count / (len(roots)**2)) # 0.75
 #print("proof_superset_of_creation_count", proof_superset_of_creation_count / (len(roots)**2)) # 0.84
 #print("creation_superset_of_proof_count", creation_superset_of_proof_count / (len(roots)**2)) # 0.91
+print("inversion_needs_extra_blocks", inversion_needs_extra_blocks / (len(roots)**2)) # 0.04
