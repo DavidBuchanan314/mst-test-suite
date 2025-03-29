@@ -40,6 +40,9 @@
 		"proof_nodes": [
 			"bafyreie5737gdxlw5i64vzichcalba3z2v5n6icifvx5xytvske7mr3hpm"
 		],
+		"inductive_proof_nodes": [
+			"bafyreie5737gdxlw5i64vzichcalba3z2v5n6icifvx5xytvske7mr3hpm"
+		],
 		"firehose_cids": "TODO"
 	}
 }

@@ -35,6 +35,9 @@
 		"proof_nodes": [
 			"bafyreigfttqdiw2qbu7ekbwyrzfqatuyo25bnzgefadq2nufj3z7wvclx4"
 		],
+		"inductive_proof_nodes": [
+			"bafyreigfttqdiw2qbu7ekbwyrzfqatuyo25bnzgefadq2nufj3z7wvclx4"
+		],
 		"firehose_cids": "TODO"
 	}
 }

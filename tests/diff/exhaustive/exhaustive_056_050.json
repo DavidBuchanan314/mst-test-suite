@@ -28,6 +28,10 @@
 		"proof_nodes": [
 			"bafyreiajozglixx7ba5tbgpbakm2vs75ptcqtpekrhpx3prazwqqnzrzbq"
 		],
+		"inductive_proof_nodes": [
+			"bafyreiajozglixx7ba5tbgpbakm2vs75ptcqtpekrhpx3prazwqqnzrzbq",
+			"bafyreidaefuo4te5bt6dryb4nwyig3rborrhp74mrg622mfchlaw235h2u"
+		],
 		"firehose_cids": "TODO"
 	}
 }

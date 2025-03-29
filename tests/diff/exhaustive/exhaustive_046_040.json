@@ -29,6 +29,9 @@
 		"proof_nodes": [
 			"bafyreihgx5nipbqnvti5ko35swbtsersq22fg2tcvn2la7zed4sg7pzpx4"
 		],
+		"inductive_proof_nodes": [
+			"bafyreihgx5nipbqnvti5ko35swbtsersq22fg2tcvn2la7zed4sg7pzpx4"
+		],
 		"firehose_cids": "TODO"
 	}
 }

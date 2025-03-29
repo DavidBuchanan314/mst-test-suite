@@ -10,6 +10,7 @@
 		"deleted_nodes": [],
 		"record_ops": [],
 		"proof_nodes": [],
+		"inductive_proof_nodes": [],
 		"firehose_cids": "TODO"
 	}
 }

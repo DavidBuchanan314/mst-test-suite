@@ -28,6 +28,12 @@
 			"bafyreia6nzpwoou2ynsyheddy6pqjyqpixgodib572t7c2sszcta3l4irq",
 			"bafyreif5lj2axnoe2hlmch5mwlnm7vyx4qvplq7vcdlcxicqnax52lvwwe"
 		],
+		"inductive_proof_nodes": [
+			"bafyreia6nzpwoou2ynsyheddy6pqjyqpixgodib572t7c2sszcta3l4irq",
+			"bafyreif5lj2axnoe2hlmch5mwlnm7vyx4qvplq7vcdlcxicqnax52lvwwe",
+			"bafyreifc5o2jzxobgxurt74vx5xryqyicjwv4xmnzipahgpxuexa22ixme",
+			"bafyreihvrp2soumle5anatn6n5lqmsdbkgxp2dp3zvimwonojupjabvzwe"
+		],
 		"firehose_cids": "TODO"
 	}
 }

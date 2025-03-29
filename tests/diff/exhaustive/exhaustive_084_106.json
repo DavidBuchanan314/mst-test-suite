@@ -47,6 +47,12 @@
 			"bafyreibuwxskdkz52m5e6yt3ap3egbenmyubydflheirtoqg5i4gbvwsnq",
 			"bafyreiekpmz54ehtmc5kzpsnr7rlstcqlezjlnl6ilivhpuhf6r3mpa72m"
 		],
+		"inductive_proof_nodes": [
+			"bafyreia2fbzol3ivp5vgmil372qzbrq6p5lbv347dozj36vwmtm35yzyta",
+			"bafyreibuwxskdkz52m5e6yt3ap3egbenmyubydflheirtoqg5i4gbvwsnq",
+			"bafyreicwmqkku3k5bncjyi3dp6go7skudmpacucel2vlobno4mgxgyzjla",
+			"bafyreiekpmz54ehtmc5kzpsnr7rlstcqlezjlnl6ilivhpuhf6r3mpa72m"
+		],
 		"firehose_cids": "TODO"
 	}
 }

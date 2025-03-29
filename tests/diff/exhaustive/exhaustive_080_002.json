@@ -32,6 +32,9 @@
 		"proof_nodes": [
 			"bafyreia2fbzol3ivp5vgmil372qzbrq6p5lbv347dozj36vwmtm35yzyta"
 		],
+		"inductive_proof_nodes": [
+			"bafyreia2fbzol3ivp5vgmil372qzbrq6p5lbv347dozj36vwmtm35yzyta"
+		],
 		"firehose_cids": "TODO"
 	}
 }

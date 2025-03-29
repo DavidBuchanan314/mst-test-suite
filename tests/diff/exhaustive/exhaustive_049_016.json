@@ -28,6 +28,9 @@
 		"proof_nodes": [
 			"bafyreidaefuo4te5bt6dryb4nwyig3rborrhp74mrg622mfchlaw235h2u"
 		],
+		"inductive_proof_nodes": [
+			"bafyreidaefuo4te5bt6dryb4nwyig3rborrhp74mrg622mfchlaw235h2u"
+		],
 		"firehose_cids": "TODO"
 	}
 }
