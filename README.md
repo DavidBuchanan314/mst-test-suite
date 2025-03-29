@@ -67,7 +67,7 @@ CAR paths are relative to the root of this git repo. Note: the CARs here only st
 
 This is *often* identical to the `created_nodes` list, but sometimes a superset, and sometimes a subset!
 
-`inductive_proof_nodes` should be the set of CIDs of the MST nodes required for ["MST Operation Inversion"](https://github.com/bluesky-social/proposals/tree/main/0006-sync-iteration#commit-validation-mst-operation-inversion)
+`inductive_proof_nodes` should be the set of CIDs of the MST nodes required for ["MST Operation Inversion"](https://github.com/bluesky-social/proposals/tree/main/0006-sync-iteration#commit-validation-mst-operation-inversion). The inductive proof should be verified by applying the ops in reverse order.
 
 `firehose_cids` is the set of CIDs you'd expect to broadcast on the "firehose" in the `blocks` CAR (minus the commit object). That is, the union of `created_nodes`, `new_value`s from `record_ops`, and `proof_nodes`. In these test cases I aim to encode the *minimal* set of blocks, but it is legal to include superfluous blocks (within reason).
 

@@ -114,6 +114,7 @@ for i in range(2**len(keys)):
 #proof_superset_of_creation_count = 0
 #creation_superset_of_proof_count = 0
 inversion_needs_extra_blocks = 0
+clusion_proof_nodes_not_in_inversion_proof = 0
 
 # generate exhaustive test cases
 for ai, root_a in enumerate(roots):
@@ -141,6 +142,10 @@ for ai, root_a in enumerate(roots):
 		if no_deletions: # commits with no deletions are more well-behaved
 			assert(proof_nodes.issubset(created_nodes))
 
+		# my inductive-proof-generation logic is ops order sensitive, so we do the sort beforehand
+		# TODO: maybe "deletes first" or similar produces smaller proofs on average?
+		record_ops.sort(key=lambda x: x["rpath"])
+
 		# figure out which blocks are required for inductive proofs.
 		# the idea here is that we use an overlay blockstore and log every "get" that has to fall thru to the lower layer.
 		# those gets are therefore the blocks required for a stateless consumer to verify the proof.
@@ -157,10 +162,12 @@ for ai, root_a in enumerate(roots):
 		assert(proof_root == root_a) # we're back to where we started
 		inductive_proof_nodes = set(CID(cid) for cid in lbs.gets)
 
-		delta = inductive_proof_nodes - (created_nodes | proof_nodes)
-		if delta:
+		if inductive_proof_nodes - (created_nodes | proof_nodes):
 			#print(delta)
 			inversion_needs_extra_blocks += 1
+
+		if proof_nodes - inductive_proof_nodes:
+			clusion_proof_nodes_not_in_inversion_proof += 1
 
 		#if proof_nodes == created_nodes:
 		#	identical_proof_and_creation_count += 1
@@ -179,7 +186,7 @@ for ai, root_a in enumerate(roots):
 			"results": {
 				"created_nodes": sorted([cid.encode() for cid in created_nodes]),
 				"deleted_nodes": sorted([cid.encode() for cid in deleted_nodes]),
-				"record_ops": sorted(record_ops, key=lambda x: x["rpath"]),
+				"record_ops": record_ops,  # these were sorted earlier
 				"proof_nodes": sorted([cid.encode() for cid in proof_nodes]),
 				"inductive_proof_nodes": sorted([cid.encode() for cid in inductive_proof_nodes]),
 				"firehose_cids": "TODO"
@@ -192,3 +199,4 @@ for ai, root_a in enumerate(roots):
 #print("proof_superset_of_creation_count", proof_superset_of_creation_count / (len(roots)**2)) # 0.84
 #print("creation_superset_of_proof_count", creation_superset_of_proof_count / (len(roots)**2)) # 0.91
 print("inversion_needs_extra_blocks", inversion_needs_extra_blocks / (len(roots)**2)) # 0.04
+print(clusion_proof_nodes_not_in_inversion_proof)
